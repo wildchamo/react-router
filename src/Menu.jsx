@@ -2,8 +2,35 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
 function Menu() {
+  const routes = [
+    {
+      id: 1,
+      to: "/",
+      text: "Home",
+    },
+    {
+      id: 2,
+      to: "/blog",
+      text: "Blog",
+    },
+    {
+      id: 3,
+      to: "/profile",
+      text: "Profile",
+    },
+  ];
   return (
     <nav>
+      {routes.map((route) => (
+        <li>
+          <NavLink
+            to={route.to}
+            style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
+          >
+            {route.text}
+          </NavLink>
+        </li>
+      ))}
       {/* <ul>
         <li>
           <Link to="/">Home</Link>
@@ -12,7 +39,7 @@ function Menu() {
           <Link to="/blog">Blog</Link>
         </li>
       </ul> */}
-      <li>
+      {/* <li>
         <NavLink
           style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
           to="/"
@@ -21,8 +48,13 @@ function Menu() {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/blog">Blog</NavLink>
-      </li>
+        <NavLink
+          style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
+          to="/blog"
+        >
+          Blog
+        </NavLink>
+      </li> */}
     </nav>
   );
 }
