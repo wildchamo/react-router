@@ -5,6 +5,8 @@ import HomePage from "../HomePage";
 import Menu from "./Menu";
 import Blog from "./Blog";
 
+// /#/path
+
 function App() {
   return (
     <div>
