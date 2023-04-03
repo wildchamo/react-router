@@ -18,6 +18,16 @@ function Menu() {
       to: "/profile",
       text: "Profile",
     },
+    {
+      id: 4,
+      to: "/login",
+      text: "login",
+    },
+    {
+      id: 5,
+      to: "/logout",
+      text: "logout",
+    },
   ];
   return (
     <nav>
@@ -31,30 +41,6 @@ function Menu() {
           </NavLink>
         </li>
       ))}
-      {/* <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/blog">Blog</Link>
-        </li>
-      </ul> */}
-      {/* <li>
-        <NavLink
-          style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
-          to="/"
-        >
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
-          to="/blog"
-        >
-          Blog
-        </NavLink>
-      </li> */}
     </nav>
   );
 }
