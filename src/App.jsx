@@ -12,11 +12,14 @@ function App() {
   return (
     <div>
       <HashRouter>
-        <Menu/>
+        <Menu />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
+
+          <Route path="/blog" element={<Blog />}>
+            <Route path=":slug" element={<BlogPost />} />
+          </Route>
+
           <Route path="*" element={<p>Not Found.</p>} />
         </Routes>
       </HashRouter>

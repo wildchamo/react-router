@@ -1,21 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {blogdata} from "./blogdata.js"
+import { Link, Outlet } from "react-router-dom";
+import { blogdata } from "./blogdata.js";
 
 function Blog() {
   return (
     <>
+      <Outlet/>
       <h1>BlogPage</h1>
-      
       <ul>
-        {blogdata.map(post => (
+        {blogdata.map((post) => (
           <BlogLink key={post.slug} post={post} />
         ))}
       </ul>
     </>
   );
 }
-
 
 function BlogLink({ post }) {
   return (
