@@ -9,7 +9,7 @@ function Blog() {
       
       <ul>
         {blogdata.map(post => (
-          <BlogLink post={post} />
+          <BlogLink key={post.slug} post={post} />
         ))}
       </ul>
     </>
