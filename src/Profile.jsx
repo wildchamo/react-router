@@ -1,11 +1,11 @@
 import React from "react";
-import { useAuth } from "./auth";
+import { useAuth, PrivateRoute } from "./auth";
 
 function Profile() {
   const auth = useAuth();
   return (
     <>
-      <h1>Holaaaa!, {auth.user.username}</h1>
+      <h1>Holaaaa!, {auth.user?.username}</h1>
     </>
   );
 }

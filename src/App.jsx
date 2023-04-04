@@ -2,7 +2,7 @@ import { useState } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 // import "./App.css";
 import HomePage from "../HomePage";
-import { AuthProvider } from "./auth";
+import { AuthProvider, PrivateRoute } from "./auth";
 import Menu from "./Menu";
 import Blog from "./Blog";
 import BlogPost from "./BlogPost";
@@ -26,7 +26,14 @@ function App() {
             </Route>
 
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/profile"
+              element={
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              }
+            />
             <Route path="/logout" element={<LogOutPage />} />
 
             <Route path="*" element={<p>Not Found.</p>} />
